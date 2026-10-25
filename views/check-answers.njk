@@ -1,0 +1,84 @@
+{% extends "layout.njk" %}
+{%
+    from "govuk/components/summary-list/macro.njk"
+    import govukSummaryList
+%}
+{%
+    from "govuk/components/button/macro.njk"
+    import govukButton
+%}
+
+{% block mainContent %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">Check your answers</h1>
+
+            {{
+                govukSummaryList({
+                    rows: [
+                        {
+                        key: {
+                            text: "Full name"
+                        },
+                        value: {
+                            text: data.fullName
+                        },
+                        actions: {
+                            items: [{
+                            href: "/apply",
+                            text: "Change",
+                            visuallyHiddenText: "full name"
+                            }]
+                        }
+                        },
+                        {
+                        key: {
+                            text: "Email address"
+                        },
+                        value: {
+                            text: data.email
+                        },
+                        actions: {
+                            items: [{
+                            href: "/apply",
+                            text: "Change",
+                            visuallyHiddenText: "email address"
+                            }]
+                        }
+                        },
+                        {
+                        key: {
+                            text: "Vehicle registration"
+                        },
+                        value: {
+                            text: data.vehicleRegistration
+                        },
+                        actions: {
+                            items: [{
+                            href: "/apply",
+                            text: "Change",
+                            visuallyHiddenText: "vehicle registration"
+                            }]
+                        }
+                        }
+                    ]
+                })
+            }}
+
+            <h2 class="govuk-heading-m">Submit your application</h2>
+
+            <p class="govuk-body">
+                By submitting, you confirm that the information provided is
+                correct.
+            </p>
+
+            <form method="post" action="/submit">
+                {{
+                    govukButton({
+                        text: "Accept and submit"
+                    })
+                }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

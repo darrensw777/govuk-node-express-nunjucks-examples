@@ -1,0 +1,20 @@
+{
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "*.njk": "html",
+        "*.nunjucks": "html"
+    },
+    "prettier.documentSelectors": ["**/*.njk", "**/*.nunjucks"],
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    }
+}

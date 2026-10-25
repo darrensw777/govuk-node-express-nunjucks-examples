@@ -1,0 +1,29 @@
+{% extends "layout.njk" %}
+{%
+    from "govuk/components/panel/macro.njk"
+    import govukPanel
+%}
+
+{% block mainContent %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            {{
+                govukPanel({
+                    titleText: "Application received",
+                    html: "Demonstration submission successful"
+                })
+            }}
+
+            <p class="govuk-body">
+                Your demonstration application has been completed successfully.
+            </p>
+
+            <p class="govuk-body">
+                No information has been sent to a government service or saved
+                permanently.
+            </p>
+
+            <a href="/" class="govuk-link"> Return to start </a>
+        </div>
+    </div>
+{% endblock %}

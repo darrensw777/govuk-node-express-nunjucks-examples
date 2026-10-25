@@ -1,0 +1,59 @@
+{
+    "name": "govuk-node-express-nunjucks-examples",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "concurrently \"npm:dev:server\" \"npm:dev:browser\"",
+        "dev:server": "tsx src/app.ts",
+        "dev:browser": "browser-sync start --proxy http://localhost:3000 --files \"views/**/*.njk,public/**/*.css,public/**/*.js,src/**/*.ts\" --port 3001 --no-open",
+        "build": "tsc",
+        "start": "node dist/app.js",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "lint": "eslint . --max-warnings 0",
+        "lint:fix": "eslint . --fix --max-warnings 0",
+        "check": "npm run format:check && npm run lint",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:e2e": "playwright test",
+        "test:e2e:ui": "playwright test --ui"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/darrensw777/govuk-node-express-nunjucks-examples.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/darrensw777/govuk-node-express-nunjucks-examples/issues"
+    },
+    "homepage": "https://github.com/darrensw777/govuk-node-express-nunjucks-examples#readme",
+    "dependencies": {
+        "express": "^5.3.0",
+        "express-session": "^1.19.0",
+        "govuk-frontend": "^6.6.0",
+        "nunjucks": "^3.2.4"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@playwright/test": "^1.64.1",
+        "@types/express": "^5.0.6",
+        "@types/express-session": "^1.19.0",
+        "@types/node": "^26.6.5",
+        "@types/nunjucks": "^3.2.6",
+        "browser-sync": "^3.0.4",
+        "concurrently": "^10.0.6",
+        "eslint": "^10.13.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.7",
+        "globals": "^17.13.0",
+        "prettier": "^3.9.10",
+        "prettier-plugin-jinja-template": "^2.2.0",
+        "tsx": "^4.23.15",
+        "typescript": "~6.0.0",
+        "typescript-eslint": "^8.72.0",
+        "vitest": "^5.0.5"
+    }
+}

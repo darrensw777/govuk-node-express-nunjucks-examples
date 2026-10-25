@@ -1,0 +1,85 @@
+{% extends "layout.njk" %}
+{%
+    from "govuk/components/input/macro.njk"
+    import govukInput
+%}
+{%
+    from "govuk/components/button/macro.njk"
+    import govukButton
+%}
+{%
+    from "govuk/components/error-summary/macro.njk"
+    import govukErrorSummary
+%}
+
+{% block mainContent %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">Your details</h1>
+
+            {% if errorList %}
+                {{
+                    govukErrorSummary({
+                        titleText: "There is a problem",
+                        errorList: errorList
+                    })
+                }}
+            {% endif %}
+
+            <form method="post" action="/apply" novalidate>
+                {{
+                    govukInput({
+                        label: {
+                            text: "Full name",
+                            classes: "govuk-label--m"
+                        },
+                        id: "fullName",
+                        name: "fullName",
+                        value: data.fullName if data,
+                        errorMessage: {
+                            text: errors.fullName
+                        } if errors and errors.fullName
+                    })
+                }}
+
+                {{
+                    govukInput({
+                        label: {
+                            text: "Email address",
+                            classes: "govuk-label--m"
+                        },
+                        id: "email",
+                        name: "email",
+                        type: "email",
+                        autocomplete: "email",
+                        value: data.email if data,
+                        errorMessage: {
+                            text: errors.email
+                        } if errors and errors.email
+                    })
+                }}
+
+                {{
+                    govukInput({
+                        label: {
+                            text: "Vehicle registration",
+                            classes: "govuk-label--m"
+                        },
+                        id: "vehicleRegistration",
+                        name: "vehicleRegistration",
+                        value: data.vehicleRegistration if data,
+                        errorMessage: {
+                            text: errors.vehicleRegistration
+                        } if errors and errors.vehicleRegistration
+                    })
+                }}
+
+                {{
+                    govukButton({
+                        text: "Continue"
+                    })
+                }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

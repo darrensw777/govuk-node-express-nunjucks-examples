@@ -1,0 +1,37 @@
+{% extends "govuk/template.njk" %}
+
+{% set assetPath = "/govuk/assets" %}
+
+{% set serviceName = "Parking permit service" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/govuk/govuk-frontend.min.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+{% endblock %}
+
+{% block pageTitle %}
+    {{ title | default("Parking permit service") }}
+{% endblock %}
+
+{% block header %}
+    <header class="app-header">
+        <div class="govuk-width-container app-header__inner">
+            <a href="/" class="app-header__brand"> Parking Permit Service </a>
+
+            <span class="app-header__label"> Demonstration Application </span>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    {% block mainContent %}
+    {% endblock %}
+{% endblock %}
+
+{% block bodyEnd %}
+    <script type="module">
+        import { initAll } from "/govuk/govuk-frontend.min.js";
+
+        initAll();
+    </script>
+{% endblock %}

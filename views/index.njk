@@ -1,0 +1,36 @@
+{% extends "layout.njk" %}
+{%
+    from "govuk/components/button/macro.njk"
+    import govukButton
+%}
+
+{% block mainContent %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">Apply for a parking permit</h1>
+
+            <p class="govuk-body">
+                Use this demonstration service to apply for a fictional parking
+                permit.
+            </p>
+
+            <h2 class="govuk-heading-m">Before you start</h2>
+
+            <p class="govuk-body">You will need:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Your full name</li>
+                <li>Your email address</li>
+                <li>Your vehicle registration</li>
+            </ul>
+
+            {{
+                govukButton({
+                    text: "Start now",
+                    href: "/apply",
+                    isStartButton: true
+                })
+            }}
+        </div>
+    </div>
+{% endblock %}

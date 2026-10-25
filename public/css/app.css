@@ -1,0 +1,49 @@
+.app-header {
+    background-color: #1d3557;
+    border-bottom: 4px solid #457b9d;
+    font-family: "GDS Transport", Arial, sans-serif;
+}
+
+.app-header__brand {
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-decoration: none;
+}
+
+.app-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.app-header__brand:visited,
+.app-header__brand:hover {
+    color: #ffffff;
+}
+
+.app-header__brand:hover {
+    text-decoration: underline;
+}
+
+.app-header__brand:focus {
+    color: #0b0c0c;
+}
+
+.app-header__label {
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+@media (max-width: 640px) {
+    .app-header__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
