@@ -47,3 +47,25 @@
         align-items: flex-start;
     }
 }
+
+/* Overriding the font */
+body,
+button,
+input,
+textarea,
+select,
+.govuk-template,
+.govuk-body,
+.govuk-body-s,
+.govuk-heading-xl,
+.govuk-heading-l,
+.govuk-heading-m,
+.govuk-heading-s,
+.govuk-button,
+.govuk-label,
+.govuk-hint,
+.govuk-error-message,
+.govuk-summary-list,
+.govuk-footer {
+    font-family: Arial, Helvetica, sans-serif;
+}
